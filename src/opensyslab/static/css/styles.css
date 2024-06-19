@@ -10847,3 +10847,11 @@ html {
   background-repeat: no-repeat;
   min-height: 15rem;
 }
+
+.post-img {
+  height: 256px;
+}
+
+.blog-content h3 a {
+  text-decoration: none;
+}

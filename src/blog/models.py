@@ -8,17 +8,22 @@ from django.contrib.auth.models import User
 
 class Category(models.Model):
     name = models.CharField(max_length=100, unique=True)
-    slug = models.SlugField(unique=True)
+    slug = models.SlugField()
     parent = models.ForeignKey('self', on_delete=models.SET_NULL, null=True, blank=True)
     created_at = models.DateField(auto_now_add=True)
 
 
+    def save(self,*args, **kwargs): 
+        if not self.slug:
+            self.slug = slugify(self.name)
+        super().save(*args, **kwargs)
+
 class Articles(models.Model):
     title = models.CharField(max_length=100, unique=True)
-    slug = models.SlugField(unique=True)
+    slug = models.SlugField()
     content = models.TextField()
     summary = models.CharField(max_length=256)
-    featured_image = models.URLField(max_length=512, default="https://user-images.githubusercontent.com/24848110/33519396-7e56363c-d79d-11e7-969b-09782f5ccbab.png")
+    featured_image = models.URLField(max_length=512, default="https://dummyimage.com/700x350/343a40/6c757d")
     views_count = models.IntegerField(default=0)
     published = models.BooleanField(default=False)
     published_at = models.DateField(blank=True, null=True)
@@ -32,6 +37,12 @@ class Articles(models.Model):
         if not self.slug:
             self.slug = slugify(self.title)
         
-        if not self.published_at and self.published:
+        if not self.published_at and self.published == "True":
             self.published_at = date.today()
+        elif self.published == "False":
+            self.published_at = None 
+        elif not self.published_at and self.published:
+            self.published_at = date.today()
+            
         super().save(*args, **kwargs)
+        
