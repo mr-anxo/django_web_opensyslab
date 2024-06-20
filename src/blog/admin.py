@@ -12,6 +12,8 @@ class ArticleAdmin(admin.ModelAdmin):
         "published",
         "author",
     )
+    search_fields = ("title",)
+    list_filter = ("published", "author")
 
 @admin.register(Category)
 class CategoryAdmin(admin.ModelAdmin):
@@ -19,3 +21,6 @@ class CategoryAdmin(admin.ModelAdmin):
         "name",
         "created_at",
     )
+    
+    search_fields = ("name",)
+    list_filter = ("name",)
