@@ -46,3 +46,10 @@ class Articles(models.Model):
             
         super().save(*args, **kwargs)
         
+    
+    class Meta:
+        pass
+    
+    def __str__(self) :
+        return self.title
+        
