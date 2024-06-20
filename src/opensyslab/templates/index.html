@@ -1,150 +1,157 @@
+{% extends 'commons/base-page.html' %}
 {% load static %}
 
-<!DOCTYPE html>
-<html lang="fr">
-    <head>
-        {% include 'commons/head.html' %}
-    </head>
-    <body class="d-flex flex-column h-100">
-        <main class="flex-shrink-0">
-            <!-- Navigation-->
-            {% include "commons/navbar.html" %}
-            <!-- Header-->
-            <header class="bg-dark py-5">
-                <div class="container px-5">
-                    <div class="row gx-5 align-items-center justify-content-center">
-                        <div class="col-lg-8 col-xl-7 col-xxl-6">
-                            <div class="my-5 text-center text-xl-start">
-                                <h1 class="display-5 fw-bolder text-white mb-2">Plateforme ouverte pour l'amélioration de vos compétences en informatique</h1>
-                                <p class="lead fw-normal text-white-50 mb-4">Reprenez le contrôle de votre montée en compétences dans les domaines de l'administration système, réseau et de la sécurité informatique.</p>
-                                <div class="d-grid gap-3 d-sm-flex justify-content-sm-center justify-content-xl-start">
-                                    <a class="btn btn-primary btn-lg px-4 me-sm-3" href="#features">Commencer</a>
-                                    <a class="btn btn-outline-light btn-lg px-4" href="#!">S'inscrire</a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-xl-5 col-xxl-6 d-none d-xl-block text-center"><img class="img-fluid rounded-3 my-5" src="{% static 'assets/OPENSYSLAB-img-01.png' %}" alt="..." /></div>
-                    </div>
-                </div>
-            </header>
-            <!-- Features section-->
-            <section class="py-5" id="features">
-                <div class="container px-5 my-5">
-                    <div class="row gx-5">
-                        <div class="col-lg-4 mb-5 mb-lg-0"><h2 class="fw-bolder mb-0">Plusieurs domaines abordés</h2></div>
-                        <div class="col-lg-8">
-                            <div class="row gx-5 row-cols-1 row-cols-md-2">
-                                <div class="col mb-5 h-100">
-                                    <div class="feature bg-primary bg-gradient text-white rounded-3 mb-3"><i class="bi bi-hdd-stack"></i></div>
-                                    <h2 class="h5">Administration système</h2>
-                                    <p class="mb-0">Configuration et maintenance des serveurs Linux et Windows</p>
-                                </div>
-                                <div class="col mb-5 h-100">
-                                    <div class="feature bg-primary bg-gradient text-white rounded-3 mb-3"><i class="bi bi-diagram-3-fill"></i></div>
-                                    <h2 class="h5">Administration réseaux</h2>
-                                    <p class="mb-0">Modélisation, configuration et dépannage des réseaux informatiques</p>
-                                </div>
-                                <div class="col mb-5 mb-md-0 h-100">
-                                    <div class="feature bg-primary bg-gradient text-white rounded-3 mb-3"><i class="bi bi-box-seam"></i></div>
-                                    <h2 class="h5">DevOps</h2>
-                                    <p class="mb-0">Prise en mains des outils et techniques de déploiement de services.</p>
-                                </div>
-                                <div class="col h-100">
-                                    <div class="feature bg-primary bg-gradient text-white rounded-3 mb-3"><i class="bi bi-shield-shaded"></i></div>
-                                    <h2 class="h5">Sécurité informatique</h2>
-                                    <p class="mb-0">Comprendre les enjeux de la sécurité informatique et la mise en place des bonnes pratiques</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-            <!-- Testimonial section-->
-            <div class="py-5 bg-light">
-                <div class="container px-5 my-5">
-                    <div class="row gx-5 justify-content-center">
-                        <div class="col-lg-10 col-xl-7">
-                            <div class="text-center">
-                                <div class="fs-4 mb-4 fst-italic">"L'objectif de notre plateforme OpenSyslab est la mise en place d'un environnement qui puisse vous fournir les éléments et outils nécéssaires dans l'exercice de vos activités en temps que professionnel dans les domaines suivants : administration système et réseaux, sécurité informatique et DevOps"</div>
-                                <div class="d-flex align-items-center justify-content-center">
-                                    <img class="rounded-circle me-3" src="{% static 'assets/ahinaxel_40x40.jpg' %}" alt="..." />
-                                    <div class="fw-bold">
-                                        Axel Ahin
-                                        <span class="fw-bold text-primary mx-1">/</span>
-                                        CEO, Admin SysNet
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+{% block page_title %}
+Accueil
+{% endblock %}
+
+<!-- Header -->
+{% block header %}
+  <header class="bg-dark py-5">
+    <div class="container px-5">
+      <div class="row gx-5 align-items-center justify-content-center">
+        <div class="col-lg-8 col-xl-7 col-xxl-6">
+          <div class="my-5 text-center text-xl-start">
+            <h1 class="display-5 fw-bolder text-white mb-2">Plateforme ouverte pour l'amélioration de vos compétences en informatique</h1>
+            <p class="lead fw-normal text-white-50 mb-4">Reprenez le contrôle de votre montée en compétences dans les domaines de l'administration système, réseau et de la sécurité informatique.</p>
+            <div class="d-grid gap-3 d-sm-flex justify-content-sm-center justify-content-xl-start">
+              <a class="btn btn-primary btn-lg px-4 me-sm-3" href="#features">Commencer</a>
+              <a class="btn btn-outline-light btn-lg px-4" href="#">S'inscrire</a>
             </div>
-            <!-- Blog preview section-->
-            <section class="py-5">
-                <div class="container px-5 my-5">
-                    <div class="row gx-5 justify-content-center">
-                        <div class="col-lg-8 col-xl-6">
-                            <div class="text-center">
-                                <h2 class="fw-bolder">Domaine OpenSyslab</h2>
-                                <p class="lead fw-normal text-muted mb-5">L'informatique est assez vaste et ne cesse de s'agrandir a fil des années. Nos services reposerons sur les domaines ci.
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row gx-5">
-                        <div class="col-lg-3 mb-5">
-                            <div class="card shadow border-0">
-                                <img class="card-img-top" src="{% static 'assets/system.jpeg' %}" alt="..." />
-                                <div class="card-body ">
-                                    <a class="text-decoration-none link-dark stretched-link" href="#!"><h5 class="card-title">Administration Système</h5></a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-3 mb-5">
-                            <div class="card shadow border-0">
-                                <img class="card-img-top" src="{% static 'assets/reseau.jpg' %}" alt="..." />
-                                <div class="card-body">
-                                    <a class="text-decoration-none link-dark stretched-link" href="#!"><h5 class="card-title mb-3">Administration réseaux</h5></a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-3 mb-5">
-                            <div class="card shadow border-0">
-                                <img class="card-img-top" src="{% static 'assets/security.png' %}" alt="..." />
-                                <div class="card-body">
-                                    <a class="text-decoration-none link-dark stretched-link" href="#!"><h5 class="card-title mb-3">Sécurité informatique</h5></a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-3 mb-5">
-                            <div class="card  shadow border-0">
-                                <img class="card-img-top" src="{% static 'assets/devops.png' %}" alt="..." />
-                                <div class="card-body">
-                                    <a class="text-decoration-none link-dark stretched-link" href="#!"><h5 class="card-title mb-3">DevOps</h5></a>
-                                </div>
-                                
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Call to action-->
-                    <aside class="bg-primary bg-gradient rounded-3 p-4 p-sm-5 mt-5">
-                        <div class="d-flex align-items-center justify-content-between flex-column flex-xl-row text-center text-xl-start">
-                            <div class="mb-4 mb-xl-0">
-                                <div class="fs-3 fw-bold text-white">Newsletter</div>
-                                <div class="text-white-50">Souscrivez à notre notre newletter pour être informer des mises à jour.</div>
-                            </div>
-                            <div class="ms-xl-4">
-                                <div class="input-group mb-2">
-                                    <input class="form-control" type="text" placeholder="Adresse Email..." aria-label="Adresse Email..." aria-describedby="button-newsletter" />
-                                    <button class="btn btn-outline-light" id="button-newsletter" type="button">Souscrire</button>
-                                </div>
-                                <div class="small text-white-50">Nous nous soucions de la protection de votre vie privée.</div>
-                            </div>
-                        </div>
-                    </aside>
-                </div>
-            </section>
-        </main>
-        {% include "commons/footer.html" %}
-    </body>
-</html>
+          </div>
+        </div>
+        <div class="col-xl-5 col-xxl-6 d-none d-xl-block text-center">
+          <img class="img-fluid rounded-3 my-5" src="{% static 'assets/OPENSYSLAB-img-01.png' %}" alt="..." />
+        </div>
+      </div>
+    </div>
+  </header>
+{% endblock %}
+
+{% block content %}
+  <!-- Features section -->
+  <section class="py-5" id="features">
+    <div class="container px-5 my-5">
+      <div class="row gx-5">
+        <div class="col-lg-4 mb-5 mb-lg-0">
+          <h2 class="fw-bolder mb-0">Plusieurs domaines abordés</h2>
+        </div>
+        <div class="col-lg-8">
+          <div class="row gx-5 row-cols-1 row-cols-md-2">
+            <div class="col mb-5 h-100">
+              <div class="feature bg-primary bg-gradient text-white rounded-3 mb-3">
+                <i class="bi bi-hdd-stack"></i>
+              </div>
+              <h2 class="h5">Administration système</h2>
+              <p class="mb-0">Configuration et maintenance des serveurs Linux et Windows</p>
+            </div>
+            <div class="col mb-5 h-100">
+              <div class="feature bg-primary bg-gradient text-white rounded-3 mb-3">
+                <i class="bi bi-diagram-3-fill"></i>
+              </div>
+              <h2 class="h5">Administration réseaux</h2>
+              <p class="mb-0">Modélisation, configuration et dépannage des réseaux informatiques</p>
+            </div>
+            <div class="col mb-5 mb-md-0 h-100">
+              <div class="feature bg-primary bg-gradient text-white rounded-3 mb-3">
+                <i class="bi bi-box-seam"></i>
+              </div>
+              <h2 class="h5">DevOps</h2>
+              <p class="mb-0">Prise en mains des outils et techniques de déploiement de services.</p>
+            </div>
+            <div class="col h-100">
+              <div class="feature bg-primary bg-gradient text-white rounded-3 mb-3">
+                <i class="bi bi-shield-shaded"></i>
+              </div>
+              <h2 class="h5">Sécurité informatique</h2>
+              <p class="mb-0">Comprendre les enjeux de la sécurité informatique et la mise en place des bonnes pratiques</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- Testimonial section -->
+  <div class="py-5 bg-light">
+    <div class="container px-5 my-5">
+      <div class="row gx-5 justify-content-center">
+        <div class="col-lg-10 col-xl-7">
+          <div class="text-center">
+            <div class="fs-4 mb-4 fst-italic">"L'objectif de notre plateforme OpenSyslab est la mise en place d'un environnement qui puisse vous fournir les éléments et outils nécéssaires dans l'exercice de vos activités en temps que professionnel dans les domaines suivants : administration système et réseaux, sécurité informatique et DevOps"</div>
+            <div class="d-flex align-items-center justify-content-center">
+              <img class="rounded-circle me-3" src="{% static 'assets/ahinaxel_40x40.jpg' %}" alt="..." />
+              <div class="fw-bold">
+                Axel Ahin
+                <span class="fw-bold text-primary mx-1">/</span>
+                CEO, Admin SysNet
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Blog preview section -->
+  <section class="py-5">
+    <div class="container px-5 my-5">
+      <div class="row gx-5 justify-content-center">
+        <div class="col-lg-8 col-xl-6">
+          <div class="text-center">
+            <h2 class="fw-bolder">Domaine OpenSyslab</h2>
+            <p class="lead fw-normal text-muted mb-5">L'informatique est assez vaste et ne cesse de s'agrandir a fil des années. Nos services reposerons sur les domaines ci.</p>
+          </div>
+        </div>
+      </div>
+      <div class="row gx-5">
+        <div class="col-lg-3 mb-5">
+          <div class="card shadow border-0">
+            <img class="card-img-top" src="{% static 'assets/system.jpeg' %}" alt="..." />
+            <div class="card-body">
+              <a class="text-decoration-none link-dark stretched-link" href="#!"><h5 class="card-title">Administration Système</h5></a>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-3 mb-5">
+          <div class="card shadow border-0">
+            <img class="card-img-top" src="{% static 'assets/reseau.jpg' %}" alt="..." />
+            <div class="card-body">
+              <a class="text-decoration-none link-dark stretched-link" href="#!"><h5 class="card-title mb-3">Administration réseaux</h5></a>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-3 mb-5">
+          <div class="card shadow border-0">
+            <img class="card-img-top" src="{% static 'assets/security.png' %}" alt="..." />
+            <div class="card-body">
+              <a class="text-decoration-none link-dark stretched-link" href="#!"><h5 class="card-title mb-3">Sécurité informatique</h5></a>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-3 mb-5">
+          <div class="card shadow border-0">
+            <img class="card-img-top" src="{% static 'assets/devops.png' %}" alt="..." />
+            <div class="card-body">
+              <a class="text-decoration-none link-dark stretched-link" href="#!"><h5 class="card-title mb-3">DevOps</h5></a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Call to action -->
+      <aside class="bg-primary bg-gradient rounded-3 p-4 p-sm-5 mt-5">
+        <div class="d-flex align-items-center justify-content-between flex-column flex-xl-row text-center text-xl-start">
+          <div class="mb-4 mb-xl-0">
+            <div class="fs-3 fw-bold text-white">Newsletter</div>
+            <div class="text-white-50">Souscrivez à notre notre newletter pour être informer des mises à jour.</div>
+          </div>
+          <div class="ms-xl-4">
+            <div class="input-group mb-2">
+              <input class="form-control" type="text" placeholder="Adresse Email..." aria-label="Adresse Email..." aria-describedby="button-newsletter" />
+              <button class="btn btn-outline-light" id="button-newsletter" type="button">Souscrire</button>
+            </div>
+            <div class="small text-white-50">Nous nous soucions de la protection de votre vie privée.</div>
+          </div>
+        </div>
+      </aside>
+    </div>
+  </section>
+{% endblock %}
