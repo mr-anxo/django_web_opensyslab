@@ -22,5 +22,9 @@ from opensyslab.views import home
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', home, name="home"),
+    path('about', home, name="about"),
+    path('pricing', home, name="pricing"),
+    path('contact', home, name="contact"),
+    path('faq', home, name="faq"),
     path('blog/', include("blog.urls")),
 ]
