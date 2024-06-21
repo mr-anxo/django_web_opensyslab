@@ -114,35 +114,42 @@
         <div class="col-xl-4">
           <div class="card border-0 bg-light mt-xl-5">
             <div class="card-body p-4 py-lg-5">
-              <div class="h6 fw-bolder">Articles recents</div>
-              {% for article in articles %}
-                {% if forloop.counter <= 3 %}
-                <div class="d-flex ">
-                    <div style="height: 80px; width: 80px;"> <img class="card-img" style="height: 80px; width: 80px;" src="{{ article.featured_image }}" alt="{{ article.slug }}" /></div>
-                    <div class="mx-4">
-                        <p class="text-muted"> {{article.published_at}}</p>
-                        <p class="fw-bold">{{article.title}}</p>
-                    </div>
+              <div>
+                <div class="h6 fw-bolder">Articles recents</div>
+                <div class="bg-white p-2">
+                  {% for article in articles %}
+                    {% if forloop.counter <= 3 %}
+                      <div class="d-flex">
+                        <div style="height: 80px; width: 80px;">
+                          <img class="card-img" style="height: 80px; width: 80px;" src="{{ article.featured_image }}" alt="{{ article.slug }}" />
+                        </div>
+                        <div class="mx-4">
+                          <p class="text-muted mb-1">{{ article.published_at }}</p>
+                          <p class="fw-bold mb-0"><a class="text-black text-decoration-none" href="{% url "article" article_slug=article.slug %}">{{ article.title }}</a></p>
+                        </div>
+                      </div>
+                      {% if forloop.counter < 3 %}
+                        <hr />
+                      {% endif %}
+                    {% endif %}
+                  {% endfor %}
                 </div>
-                <hr>
-                {% endif %}
+              </div>
 
-              {% endfor %}
-
-              <div class="">
-                {% comment %} d-flex align-items-center justify-content-center {% endcomment %}
-                <div class="">
-                    {% comment %} text-center {% endcomment %}
-                  <p class="text-muted mb-4">
-                    Contact us at
-                    <br />
-                    <a href="#!">support@domain.com</a>
-                  </p>
-                  <div class="h6 fw-bolder">Follow us</div>
-                  <a class="fs-5 px-2 link-dark" href="#!"><i class="bi-twitter"></i></a>
-                  <a class="fs-5 px-2 link-dark" href="#!"><i class="bi-facebook"></i></a>
-                  <a class="fs-5 px-2 link-dark" href="#!"><i class="bi-linkedin"></i></a>
-                  <a class="fs-5 px-2 link-dark" href="#!"><i class="bi-youtube"></i></a>
+              <div class="pt-5">
+                <div class="h6 fw-bolder">Categories</div>
+                <div class="bg-white p-2">
+                  <div class="d-flex">
+                    <div class="mx-4">
+                      <ul>
+                        {% for categorie in categories %}
+                          <li>
+                            <a class="text-decoration-none " href="#!">{{ categorie.name }}</a>
+                          </li>
+                        {% endfor %}
+                      </ul>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
