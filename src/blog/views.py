@@ -9,8 +9,9 @@ def blog_home(request):
     return render(request, "blog-home.html", context={ "articles" : articles, "categories" : categories })
 
 
-def blog_article(request, article_slug):
-    article = Articles.objects.get(slug=article_slug)
+def blog_article(request, slug):
+    article = Articles.objects.get(slug=slug)
+    
     
     if article.slug:
         return render(request, f"blog-post.html", context={ "article" : article})
