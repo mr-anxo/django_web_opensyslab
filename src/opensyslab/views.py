@@ -21,3 +21,8 @@ def pricing(request):
 def faq(request):
     return render(request, "faq.html")
 
+def portfolio_item(request):
+    return render(request, "portfolio-item.html")
+
+def portfolio_overview(request):
+    return render(request, "portfolio-overview.html")

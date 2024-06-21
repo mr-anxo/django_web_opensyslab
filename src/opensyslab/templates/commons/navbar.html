@@ -13,8 +13,8 @@
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" id="navbarDropdownPortfolio" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Portfolio</a>
                     <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownPortfolio">
-                        <li><a class="dropdown-item" href="/portfolio">Portfolio Overview</a></li>
-                        <li><a class="dropdown-item" href="/portfolio">Portfolio Item</a></li>
+                        <li><a class="dropdown-item" href="{% url "portfolio" %}">Portfolio Overview</a></li>
+                        <li><a class="dropdown-item" href="{% url "portfolio_details" %}">Portfolio Item</a></li>
                     </ul>
                 </li>
             </ul>
@@ -25,7 +25,7 @@
                 <button class="btn btn-outline-light" type="button">S'inscrire</button>
             </div> {% endcomment %}
             <div>
-                <a href="/admin/"><button class="btn btn-primary" type="button" >Se connecter</button></a>
+                <a href="#!"><button class="btn btn-primary" type="button" >Se connecter</button></a>
             </div>
         </div>
     </div>

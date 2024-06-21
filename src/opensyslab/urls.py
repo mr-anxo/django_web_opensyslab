@@ -17,14 +17,16 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import include, path
 
-from opensyslab.views import home
+from opensyslab.views import home, about, portfolio_item, portfolio_overview, pricing, contact, faq
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', home, name="home"),
-    path('about', home, name="about"),
-    path('pricing', home, name="pricing"),
-    path('contact', home, name="contact"),
-    path('faq', home, name="faq"),
+    path('about', about, name="about"),
+    path('pricing', pricing, name="pricing"),
+    path('contact', contact, name="contact"),
+    path('faq', faq, name="faq"),
+    path('portfolio', portfolio_item, name="portfolio"),
+    path('portfolio_details', portfolio_overview, name="portfolio_details"),
     path('blog/', include("blog.urls")),
 ]
