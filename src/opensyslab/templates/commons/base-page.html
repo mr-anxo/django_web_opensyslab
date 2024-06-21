@@ -1,24 +1,37 @@
-
 <!DOCTYPE html>
 <html lang="fr">
-<head>
-    {% include "commons/head.html" %}
-     
-    {% block title %}
-        <title>{% block page_title %}Website{% endblock page_title %} | Opensyslab </title>
-    {% endblock title %}
-</head>
-<body class="d-flex flex-column h-100">
-    <main class="flex-shrink-0">
-        <!-- Navigation-->
-        {% include "commons/navbar.html" %}
-        <!-- Header-->
-        {% block header %}{% endblock header %}
+  <head>
+    {% include 'commons/head.html' %}
 
-        {% block content %}{% endblock content %}
+    {% block title %}
+      <title>
+        {% block page_title %}
+          Website
+        {% endblock %}| Opensyslab
+      </title>
+    {% endblock %}
+  </head>
+  <body class="d-flex flex-column h-100">
+    <main class="flex-shrink-0">
+      <!-- Navigation -->
+      {% include 'commons/navbar.html' %}
+      <!-- Header -->
+      {% block header %}
+        <section class="py-5" style="background-image: url('https://c0.wallpaperflare.com/preview/1021/163/815/technology-networking-abstract-business.jpg');background-repeat: no-repeat; background-size: cover; background-position: center;">
+          <div class="container justify-content-between d-flex">
+            <h1 style="color: white;">Page</h1>
+            <div>
+              <h1 class="bg-dark mx-1 p-2 fs-5" style="color: white; text-align: center;"><a class="text-decoration-none" href="{% url 'home' %}">Home</a> / Page</h1>
+            </div>
+          </div>
+        </section>
+      {% endblock %}
+
+      {% block content %}
+      {% endblock %}
     </main>
     {% block footer %}
-        {% include "commons/footer.html" %}
-    {% endblock footer %}
-</body>
+      {% include 'commons/footer.html' %}
+    {% endblock %}
+  </body>
 </html>
