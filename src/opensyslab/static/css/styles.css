@@ -10825,33 +10825,3 @@ textarea.form-control-lg {
     display: none !important;
   }
 }
-body,
-html {
-  height: 100%;
-}
-
-.feature {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  height: 3rem;
-  width: 3rem;
-  font-size: 1.5rem;
-}
-
-.bg-featured-blog {
-  height: 100%;
-  width: 100%;
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  min-height: 15rem;
-}
-
-.post-img {
-  height: 256px;
-}
-
-.blog-content h3 a {
-  text-decoration: none;
-}
