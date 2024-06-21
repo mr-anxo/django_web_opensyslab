@@ -115,11 +115,17 @@
           <div class="card border-0 bg-light mt-xl-5">
             <div class="card-body p-4 py-lg-5">
               <div class="h6 fw-bolder">Articles recents</div>
-              {% for article in articles|slice:"3:" %}
-              <div>
-                <div style="height: 80px; width: 80px;"> </div>
-                <div></div>
-              </div>
+              {% for article in articles %}
+                {% if forloop.counter <= 3 %}
+                <div class="d-flex ">
+                    <div style="height: 80px; width: 80px;"> <img class="card-img" style="height: 80px; width: 80px;" src="{{ article.featured_image }}" alt="{{ article.slug }}" /></div>
+                    <div class="mx-4">
+                        <p class="text-muted"> {{article.published_at}}</p>
+                        <p class="fw-bold">{{article.title}}</p>
+                    </div>
+                </div>
+                <hr>
+                {% endif %}
 
               {% endfor %}
 
