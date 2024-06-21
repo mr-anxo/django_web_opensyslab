@@ -26,7 +26,7 @@ urlpatterns = [
     path('pricing', pricing, name="pricing"),
     path('contact', contact, name="contact"),
     path('faq', faq, name="faq"),
-    path('portfolio', portfolio_item, name="portfolio"),
-    path('portfolio_details', portfolio_overview, name="portfolio_details"),
+    path('portfolio', portfolio_overview, name="portfolio"),
+    path('portfolio_details', portfolio_item, name="portfolio_details"),
     path('blog/', include("blog.urls")),
 ]
